@@ -15,16 +15,16 @@ class ElevatorTest {
     @Test
     void testAddPassenger() {
         Elevator elevator = new Elevator(0, 10, 10);
-        elevator.addPassenger();
+        elevator.addPassenger(1);
         assertEquals(1, elevator.getPassengerCount());
     }
 
     @Test
     void testRemovePassenger() {
         Elevator elevator = new Elevator(0, 10, 10);
-        elevator.addPassenger();
-        elevator.addPassenger();
-        elevator.removePassenger();
+        elevator.addPassenger(1);
+        elevator.addPassenger(1);
+        elevator.removePassenger(1);
         assertEquals(1, elevator.getPassengerCount());
     }
 
@@ -39,8 +39,8 @@ class ElevatorTest {
     @Test
     void testAddPassengerToFullElevator() {
         Elevator elevator = new Elevator(0, 10, 1);
-        elevator.addPassenger();
-        elevator.addPassenger();
+        elevator.addPassenger(1);
+        elevator.addPassenger(1);
         assertEquals(1, elevator.getPassengerCount());
     }
 }
